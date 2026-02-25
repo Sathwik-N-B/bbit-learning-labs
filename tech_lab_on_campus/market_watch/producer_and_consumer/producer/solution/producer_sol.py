@@ -16,6 +16,7 @@ class mqProducer(mqProducerInterface):
 		self.m_channel = self.m_connection.channel()
 		self.m_channel.exchange_declare(self.m_exchange_name)
 
+
 	def publishOrder(self, message: str) -> None:
 		self.m_channel.basic_publish(
 			exchange=self.m_exchange_name,
